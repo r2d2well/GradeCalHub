@@ -4,8 +4,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
-const JWT_SECRET = 'CPFSJ@_V@5ED';
-
 const app = express();
 const PORT = 5000;
 
