@@ -1,7 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs');
-const path = require('path');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
@@ -14,10 +12,10 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
-// Define the directory where the JSON files are stored
-const calculatorsDir = path.join(__dirname, 'calculators');
+const dbPassword = process.env.DB_PASSWORD;
+const uri = `mongodb+srv://r2d2well:${dbPassword}@gradecalhub.59mpb.mongodb.net/?retryWrites=true&w=majority&appName=GradeCalHub`;
 
-mongoose.connect('mongodb://localhost:27017/calculatorApp')
+mongoose.connect(uri)
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.error('Error connecting to MongoDB:', error));
 
@@ -36,7 +34,6 @@ app.get('/api/check-username/:username', async (req, res) => {
 });
 
 app.post('/register', async (req, res) => {
-  console.log("Here");
   const { username, password } = req.body;
   if (!username || !password) {
     return res.status(400).json({ error: 'Username and password are required' });
