@@ -1,0 +1,148 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+}
+
+.login-button, .logout-button {
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login-button:hover, .logout-button:hover {
+  background-color: #2e7d32;
+}
+
+.navigation-bar {
+  background-color: #4caf50;
+  padding: 10px;
+  text-align: center;
+}
+
+.navigation-bar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-bar li {
+  margin: 0 15px;
+}
+
+.navigation-bar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navigation-bar a:hover {
+  color: #d4f0d4;
+}
+
+p{
+  text-align: center;
+}
+
+.homepage-container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage-main {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.welcome-section {
+  margin-bottom: 30px;
+}
+
+.welcome-section h1 {
+  margin-top: 0;
+  font-size: 2.5rem;
+  color: black;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.features-section {
+  margin-bottom: 30px;
+}
+
+.features-section h2 {
+  margin:0;
+  font-size: 2rem;
+  color: #4caf50;
+}
+
+.features-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.features-section li {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.cta-section h2 {
+  margin:0;
+  font-size: 2rem;
+  color: #4caf50;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #388e3c;
+}

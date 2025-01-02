@@ -1,0 +1,45 @@
+.h2 {
+    font-size: 24px;               /* Larger font size for emphasis */
+    color: #388e3c;                /* Dark green color to match the theme */
+    font-weight: bold;             /* Make the text bold */
+    margin-top: 20px;              /* Add space above the h2 */
+    padding: 10px;                 /* Add padding around the text */
+    background-color: #f0fdf4;     /* Light green background for contrast */
+    border: 2px solid #4caf50;     /* Green border for definition */
+    border-radius: 8px;            /* Rounded corners */
+    display: inline-block;         /* Fit width to the content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center;            /* Center-align the text */
+    transition: transform 0.2s;    /* Smooth transform effect on hover */
+  }
+  
+  /* Hover effect for h2 */
+  .h2:hover {
+    transform: scale(1.05);        /* Slightly enlarge the element on hover */
+  }
+  .center-container {
+    display: flex;
+    flex-direction: column;  /* Stack elements vertically */
+    align-items: center;     /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    min-height: 60vh;       /* Take full viewport height */
+    text-align: center;      /* Center the text content */
+  }
+  
+  input {
+    width: 100%;                /* Full width */
+    max-width: 300px;           /* Limit maximum width */
+    padding: 10px;              /* Add padding inside the input */
+    margin: 10px 0;             /* Vertical margin for spacing */
+    border: 2px solid #292929;
+    border-radius: 5px;         /* Rounded corners */
+    font-size: 16px;            /* Slightly larger font size */
+    outline: none;              /* Remove default focus outline */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for interactions */
+  }
+  
+  /* Input focus effect */
+  input:focus {
+    border-color: #388e3c;      /* Darker green on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Soft glow effect */
+  }
