@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 const PORT = 5000;
+const JWT_SECRET = 'CPFSJ@_V@5ED';
 
 app.use(cors());
 app.use(express.json());
