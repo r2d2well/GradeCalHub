@@ -11,8 +11,7 @@ const JWT_SECRET = 'CPFSJ@_V@5ED';
 app.use(cors());
 app.use(express.json());
 
-const dbPassword = process.env.DB_PASSWORD;
-const uri = `mongodb+srv://r2d2well:${dbPassword}@gradecalhub.59mpb.mongodb.net/?retryWrites=true&w=majority&appName=GradeCalHub`;
+const uri = process.env.MONGODB_URI;
 
 mongoose.connect(uri)
   .then(() => console.log('Connected to MongoDB'))
