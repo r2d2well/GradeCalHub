@@ -4,9 +4,10 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
+const JWT_SECRET = process.env.SECRET;
+
 const app = express();
 const PORT = 5000;
-const JWT_SECRET = 'CPFSJ@_V@5ED';
 
 app.use(cors());
 app.use(express.json());
@@ -141,8 +142,10 @@ app.get('/auth/user', authenticate, (req, res) => {
   res.json({ username: req.user });
 });
 
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok'});
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-module.exports = app;
