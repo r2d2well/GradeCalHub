@@ -16,9 +16,12 @@ function CalculatorList() {
       const token = localStorage.getItem("token");
       if (token) {
         try {
-          const response = await axios.get("/calculators", {
-            headers: { Authorization: `Bearer ${token}` },
-          });
+          const response = await axios.get(
+            "https://gradecalhub-backend.onrender.com/calculators",
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          );
           setCalculators(response.data);
         } catch (err) {
           setError(err.message);
@@ -50,7 +53,7 @@ function CalculatorList() {
       try {
         const token = localStorage.getItem("token");
         await axios.delete(
-          `http://localhost:5000/calculators/${selectedCalculator.name}`,
+          `https://gradecalhub-backend.onrender.com/calculators/${selectedCalculator.name}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

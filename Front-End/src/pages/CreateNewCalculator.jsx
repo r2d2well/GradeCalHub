@@ -61,12 +61,15 @@ function CreateNewCalculator() {
     const token = localStorage.getItem("token");
     if (token) {
       try {
-        await axios.post("/calculators", {
-          headers: { Authorization: `Bearer ${token}` },
-          name: calculatorName,
-          description: calculatorDescription,
-          grades: categories,
-        });
+        await axios.post(
+          "https://gradecalhub-backend.onrender.com/calculators",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+            name: calculatorName,
+            description: calculatorDescription,
+            grades: categories,
+          }
+        );
         alert("Calculator created successfully!");
         setCategories([]);
         setTotalPercent(0);

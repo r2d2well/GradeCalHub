@@ -9,7 +9,7 @@ function NavigationBar() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      axios.get("http://localhost:5000/auth/user", {
+      axios.get("https://gradecalhub-backend.onrender.com/auth/user", {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(response => {

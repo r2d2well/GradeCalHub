@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/AuthPage.css";
+import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {
   const [username, setUsername] = useState("");
@@ -9,11 +10,12 @@ function RegisterPage() {
   const [usernameAvailable, setUsernameAvailable] = useState(true);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
 
   const checkUsernameAvailability = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/check-username/${username}`
+        `https://gradecalhub-backend.onrender.com/api/check-username/${username}`
       );
       setUsernameAvailable(response.data.available);
     } catch (err) {
@@ -36,11 +38,20 @@ function RegisterPage() {
     }
 
     try {
-      await axios.post("http://localhost:5000/register", {
+      await axios.post("https://gradecalhub-backend.onrender.com/register", {
         username,
         password,
       });
       setSuccess(true);
+      const response = await axios.post(
+        "https://gradecalhub-backend.onrender.com/login",
+        {
+          username,
+          password,
+        }
+      );
+      localStorage.setItem("token", response.data.token);
+      navigate("/"); // Redirect to home or dashboard
     } catch (err) {
       console.error("Error registering user:", err);
       setError("Registration failed. Please try again.");
